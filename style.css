@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --red: hsl(0, 100%, 74%);
+    --green: hsl(154, 59%, 51%);
+    --blue: hsl(248, 32%, 49%);
+    --dark-blue: hsl(249, 10%, 26%);
+    --grayish-blue: hsl(246, 25%, 77%);
+    --white: #fff;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    background-image: url('./images/bg-intro-desktop.png');
+    color: var(--white);
+    background-color: var(--red);
+}
+
+.hide {
+    display: none;
+}
+
+div.page-container {
+    display: flex;
+    max-width: 950px;
+}
+
+div.page-container section.text-content,
+div.page-container section.form-content {
+    flex: 1;
+}
+
+div.page-container section.text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 30px;
+}
+
+div.page-container section.text-content h1 {
+    font-size: 45px;
+    margin-bottom: 30px;
+    line-height: 1;
+}
+
+div.page-container section.text-content p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+div.page-container section.form-content button,
+div.page-container section.form-content input[type=submit] {
+    width: 100%;
+    border: none;
+    border-radius: 7px;
+    padding: 15px 0;
+    color: var(--white);
+}
+
+div.page-container section.form-content button {
+    margin-bottom: 20px;
+    box-shadow: 0 5px 13px -4px rgba(0, 0, 0, 0.369);
+    background-color: var(--blue);
+}
+
+div.page-container section.form-content button span {
+    color: var(--grayish-blue);
+}
+
+div.page-container section.form-content .input-container {
+    position: relative;
+}
+
+div.page-container section.form-content input:not([type=submit]) {
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    box-sizing: border-box;
+}
+
+div.page-container section.form-content input:not([type=submit]).input-error {
+    margin-bottom: 40px;
+    border: 1px solid red;
+}
+
+div.page-container section.form-content .input-container.input-container-error::before {
+    content: url('./images/icon-error.svg');
+    position: absolute;
+    top: 11px;
+    right: 20px;
+}
+
+div.page-container section.form-content input[type=submit] {
+    margin-bottom: 10px;
+    background-color: var(--green);
+}
+
+div.page-container section.form-content input[type=submit]:focus {
+    outline: var(--dark-blue);
+}
+
+div.page-container section.form-content form {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 7px;
+    background-color: var(--white);
+    box-shadow: 0 5px 13px -4px rgba(0, 0, 0, 0.369);
+}
+
+div.page-container section.form-content form .error {
+    color: var(--red);
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    font-size: 11px;
+}
+
+div.page-container section.form-content form a {
+    color: var(--grayish-blue);
+    text-align: center;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+div.page-container section.form-content form a span {
+    color: var(--red);
+}
+
+@media screen and (max-width: 600px) {
+    div.page-container {
+        max-width: 375px !important;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    div.page-container {
+        max-width: 500px;
+        margin: 100px auto;
+        flex-direction: column;
+    }
+
+    div.page-container section.text-content {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+
+    div.page-container section.text-content h1 {
+        font-size: 40px;
+    }
+
+    div.page-container section.text-content p {
+        font-size: 18px;
+    }
+}
